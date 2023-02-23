@@ -1,0 +1,233 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+// Necessary for Next auth
+model Account {
+    id                String  @id @default(cuid())
+    userId            String
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String? @db.Text
+    access_token      String? @db.Text
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String? @db.Text
+    session_state     String?
+    user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
+}
+
+model Session {
+    id           String   @id @default(cuid())
+    sessionToken String   @unique
+    userId       String
+    expires      DateTime
+    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+    identifier String
+    token      String   @unique
+    expires    DateTime
+
+    @@unique([identifier, token])
+}
+
+model User {
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    accounts      Account[]
+    sessions      Session[]
+    emailVerified Boolean   @default(false)
+    role          Role      @default(USER)
+    profile       String?
+
+    stores  Store[]
+    reviews Review[]
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+model Store {
+    id           String   @id @default(cuid())
+    name         String
+    description  String
+    logo         String?
+    rating       Float    @default(0.0)
+    reviews      Review[]
+    location     String?
+    email        String?
+    phone        String?
+    map_location String?
+    banner       String?
+    verified     Boolean  @default(false)
+
+    seller   User   @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+    sellerId String
+
+    products Product[]
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+model Product {
+    id          String   @id @default(cuid())
+    title       String
+    slug        String   @unique
+    description String
+    reviews     Review[]
+    rating      Float    @default(0.0)
+    tags        String[]
+    status      Status   @default(ACTIVE)
+    stock       Int      @default(1)
+    discount    Int      @default(0)
+    images      String[]
+    brand       String?
+
+    price         Json  @db.Json
+    delivery      Json  @db.Json
+    qna           Json? @db.Json
+    seo           Json? @db.Json
+    customization Json? @db.Json
+    warranty      Json? @db.Json
+
+    category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+    categoryId String
+
+    seller_store  Store  @relation(fields: [sellerStoreId], references: [id], onDelete: Cascade)
+    sellerStoreId String
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    // delivery   Delivery @relation(fields: [deliveryId], references: [id])
+    // deliveryId String
+
+    // coupons   Coupons @relation(fields: [couponsId], references: [id])
+    // couponsId String
+
+    // qna   Qna    @relation(fields: [qnaId], references: [id])
+    // qnaId String
+
+    // warranty   Warranty @relation(fields: [warrantyId], references: [id])
+    // warrantyId String
+
+    // seo   SEO?    @relation(fields: [seoId], references: [id], onDelete: Cascade)
+    // seoId String?
+
+    // price   Price  @relation(fields: [priceId], references: [id])
+    // priceId String
+}
+
+// model SEO {
+//     id          String @id @default(cuid())
+//     title       String
+//     description String
+//     keywords    String
+
+//     product Product[]
+// }
+
+// model Price {
+//     id      String    @id @default(cuid())
+//     old     Float?
+//     new     Float
+//     product Product[]
+// }
+
+// model Delivery {
+//     id           String    @id @default(cuid())
+//     availability Boolean   @default(true)
+//     price        Float     @default(2)
+//     time         String    @default("1-2 days")
+//     product      Product[]
+// }
+
+// model Qna {
+//     id       String    @id @default(cuid())
+//     question String
+//     answer   String
+//     product  Product[]
+// }
+
+// model Customization {
+//     id    String   @id @default(cuid())
+//     color String[]
+//     size  String[]
+// }
+
+// model Coupons {
+//     id       String    @id @default(cuid())
+//     code     String
+//     discount Float
+//     expiry   DateTime  @default(dbgenerated("NOW() + interval '7 days'"))
+//     Product  Product[]
+
+//     created_at DateTime @default(now())
+//     updated_at DateTime @updatedAt
+// }
+
+// model Warranty {
+//     id      String    @id @default(cuid())
+//     status  Boolean   @default(true)
+//     time    String    @default("1 year")
+//     Product Product[]
+// }
+
+model Category {
+    id   String @id @default(cuid())
+    name String @unique
+    slug String @unique
+
+    parent   Category? @relation("Parent", fields: [parentId], references: [id])
+    parentId String?
+
+    products Product[]
+
+    category Category[] @relation("Parent")
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+model Review {
+    id     String   @id @default(cuid())
+    rating Int
+    review String
+    images String[]
+
+    user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId String?
+
+    product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+    productId String?
+
+    store   Store?  @relation(fields: [storeId], references: [id], onDelete: Cascade)
+    storeId String?
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+}
+
+enum Role {
+    ADMIN
+    USER
+    SELLER
+}
+
+enum Status {
+    ACTIVE
+    INACTIVE
+}
