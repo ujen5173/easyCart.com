@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-import run from "./data.js";
+// import run from "./data.js";
+import run from "./run.mjs";
 
 const prisma = new PrismaClient();
 const cleanupDatabase = () => {

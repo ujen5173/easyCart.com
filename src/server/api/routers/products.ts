@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { number, z } from "zod";
 import { prisma } from "~/server/db";
 import {
   createTRPCRouter,
@@ -8,14 +8,14 @@ import {
 } from "~/server/api/trpc";
 
 export const productsRouter = createTRPCRouter({
-  all: publicProcedure.query(() => {
-    return prisma.product.findMany();
+  all: publicProcedure.query(async () => {
+    return await prisma.product.findMany();
   }),
 
   singleProduct: publicProcedure
     .input(z.object({ slug: z.string() }))
-    .query(({ input }) => {
-      return prisma.product.findUnique({
+    .query(async ({ input }) => {
+      return await prisma.product.findUnique({
         where: {
           slug: input.slug,
         },
@@ -32,8 +32,8 @@ export const productsRouter = createTRPCRouter({
 
   allFromStore: publicProcedure
     .input(z.object({ storeId: z.string().cuid() }))
-    .query(({ input }) => {
-      return prisma.product.findMany({
+    .query(async ({ input }) => {
+      return await prisma.product.findMany({
         where: {
           sellerStoreId: input.storeId,
         },
@@ -41,13 +41,79 @@ export const productsRouter = createTRPCRouter({
     }),
 
   allFromCategory: publicProcedure
-    .input(z.object({ categoryId: z.string().cuid() }))
-    .query(({ input }) => {
-      return prisma.product.findMany({
+    .input(
+      z.object({
+        slug: z.string(),
+        filter: z
+          .object({
+            price: z.object({ gte: z.number(), lte: z.number().nullable() }),
+          })
+          .optional(),
+      })
+    )
+    .query(async ({ input }) => {
+      const filter: { price: { gte: number; lte: number } } = input.filter || {
+        price: {
+          gte: 0,
+          lte: 1000000,
+        },
+      };
+
+      const res = await prisma.product.findMany({
         where: {
-          categoryId: input.categoryId,
+          AND: [
+            {
+              OR: [
+                {
+                  category: {
+                    slug: input.slug,
+                  },
+                },
+                {
+                  category: {
+                    parent: {
+                      slug: input.slug,
+                    },
+                  },
+                },
+              ],
+            },
+            {
+              price: {
+                path: ["new"],
+                gte: filter.price.gte,
+                lte: filter.price.lte,
+              },
+            },
+          ],
+        },
+        include: {
+          seller_store: {
+            include: {
+              seller: true,
+            },
+          },
         },
       });
+      const count = await prisma.product.count({
+        where: {
+          OR: [
+            {
+              category: {
+                slug: input.slug,
+              },
+            },
+            {
+              category: {
+                parent: {
+                  slug: input.slug,
+                },
+              },
+            },
+          ],
+        },
+      });
+      return { products: res, count };
     }),
 
   allFromSingleStoreUsingCategory: publicProcedure
@@ -57,8 +123,8 @@ export const productsRouter = createTRPCRouter({
         categoryId: z.string().cuid(),
       })
     )
-    .query(({ input }) => {
-      return prisma.product.findMany({
+    .query(async ({ input }) => {
+      return await prisma.product.findMany({
         where: {
           sellerStoreId: input.storeId,
           categoryId: input.categoryId,
@@ -142,8 +208,8 @@ export const productsRouter = createTRPCRouter({
         sellerStoreId: z.string().cuid(),
       })
     )
-    .mutation(({ input }) => {
-      return prisma.product.create({
+    .mutation(async ({ input }) => {
+      return await prisma.product.create({
         data: input,
       });
     }),
@@ -157,8 +223,8 @@ export const productsRouter = createTRPCRouter({
         images: z.array(z.string().url()).optional(),
       })
     )
-    .mutation(({ input, ctx }) => {
-      return prisma.review.create({
+    .mutation(async ({ input, ctx }) => {
+      return await prisma.review.create({
         data: {
           rating: input.rating,
           review: input.review,

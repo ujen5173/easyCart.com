@@ -7,8 +7,21 @@ import {
 } from "~/server/api/trpc";
 
 export const categoriesRouter = createTRPCRouter({
-  all: publicProcedure.query(() => {
-    return prisma.category.findMany();
+  all: publicProcedure.query(async () => {
+    return await prisma.category.findMany({
+      where: {
+        parentId: null,
+      },
+      include: {
+        children: true,
+        parent: true,
+        products: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
   }),
 
   single: publicProcedure
@@ -17,10 +30,18 @@ export const categoriesRouter = createTRPCRouter({
         slug: z.string(),
       })
     )
-    .query(({ input }) => {
-      return prisma.category.findFirst({
+    .query(async ({ input }) => {
+      return await prisma.category.findFirst({
         where: {
           slug: input.slug,
+        },
+        include: {
+          children: true,
+          parent: {
+            include: {
+              children: true,
+            },
+          },
         },
       });
     }),
@@ -33,8 +54,8 @@ export const categoriesRouter = createTRPCRouter({
         parentId: z.string().cuid().optional(),
       })
     )
-    .mutation(({ input }) => {
-      return prisma.category.create({
+    .mutation(async ({ input }) => {
+      return await prisma.category.create({
         data: input,
       });
     }),
@@ -45,8 +66,8 @@ export const categoriesRouter = createTRPCRouter({
         name: z.string(),
       })
     )
-    .query(({ input }) => {
-      return prisma.category.findMany({
+    .query(async ({ input }) => {
+      return await prisma.category.findMany({
         where: {
           name: {
             contains: input.name,

@@ -1,9 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "prisma/seed.js",
-    ".eslintrc.cjs",
+    "prisma/seed.mjs",
+    "prisma/run.mjs",
     "prisma/fetch.js",
-    "tailwind.config.cjs"
+    ".eslintrc.cjs",
+    "tailwind.config.cjs",
+    "next.config.mjs",
+    "bot/index.js"
   ]
 }

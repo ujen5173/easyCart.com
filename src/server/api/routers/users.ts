@@ -27,7 +27,10 @@ export const usersRouter = createTRPCRouter({
       });
     }),
 
-  all: publicProcedure
+  all: publicProcedure.query(() => {
+    return prisma.user.findMany();
+  }),
+  single: publicProcedure
     .input(
       z.object({
         id: z.string().cuid(),

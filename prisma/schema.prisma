@@ -97,7 +97,7 @@ model Product {
     brand       String?
 
     price         Json  @db.Json
-    delivery      Json  @db.Json
+    delivery      Json?  @db.Json
     qna           Json? @db.Json
     seo           Json? @db.Json
     customization Json? @db.Json
@@ -190,13 +190,16 @@ model Category {
     id   String @id @default(cuid())
     name String @unique
     slug String @unique
+    ///*Future*/ description String?
+    ///*Future*/ banner String?
+    ///*Future*/ thumbnail String?
 
     parent   Category? @relation("Parent", fields: [parentId], references: [id])
     parentId String?
 
     products Product[]
 
-    category Category[] @relation("Parent")
+    children Category[] @relation("Parent")
 
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt

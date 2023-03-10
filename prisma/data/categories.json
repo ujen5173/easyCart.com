@@ -1,0 +1,537 @@
+[
+  {
+    "id": "76007035-70cc-45c8-b099-a20fa18a31e9",
+    "name": "Clothing",
+    "slug": "/shop/clothing",
+    "parentId": null
+  },
+  {
+    "id": "322a7144-384d-4d10-8e07-1d4c00c24752",
+    "name": "Dresses",
+    "slug": "/shop/dresses",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "f8764755-01a0-404c-98c2-268717d21dd4",
+    "name": "HatsNew",
+    "slug": "/shop/hatsnew",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "8b8f2cc1-45d9-4e0a-a564-ba6e4f23e367",
+    "name": "Hoodies & Sweatshirts",
+    "slug": "/shop/hoodies-&-sweatshirts",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "034441a3-03ff-4330-9e67-62cdb74c97d6",
+    "name": "Leggings",
+    "slug": "/shop/leggings",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "deb61fdc-2bff-4b9d-b2db-6d74d56b3db6",
+    "name": "Skirts",
+    "slug": "/shop/skirts",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "30793010-4086-4508-b5a7-8bc0f946d913",
+    "name": "Socks",
+    "slug": "/shop/socks",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "9c0af979-418b-43ef-9f04-1d504f344c34",
+    "name": "T-Shirts",
+    "slug": "/shop/t-shirts",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "e77b90cb-a467-4b3a-a92d-6bc32d30962e",
+    "name": "Tank Tops",
+    "slug": "/shop/tank-tops",
+    "parentId": "76007035-70cc-45c8-b099-a20fa18a31e9"
+  },
+  {
+    "id": "49006adf-4b91-4e55-be93-735f75530a71",
+    "name": "Stickers",
+    "slug": "/shop/stickers",
+    "parentId": null
+  },
+  {
+    "id": "e09e27e0-4e5a-404c-bf0f-4961d9cc3c00",
+    "name": "Car Stickers",
+    "slug": "/shop/car-stickers",
+    "parentId": "49006adf-4b91-4e55-be93-735f75530a71"
+  },
+  {
+    "id": "885828ec-4f4d-47e1-91d7-9f62aa0d7947",
+    "name": "Helmet Stickers",
+    "slug": "/shop/helmet-stickers",
+    "parentId": "49006adf-4b91-4e55-be93-735f75530a71"
+  },
+  {
+    "id": "2870403a-1829-44eb-b438-a777553fce1e",
+    "name": "Hydro Flask Stickers",
+    "slug": "/shop/hydro-flask-stickers",
+    "parentId": "49006adf-4b91-4e55-be93-735f75530a71"
+  },
+  {
+    "id": "5bb5b3bc-c08c-45c9-8a4f-71103f8eab5e",
+    "name": "Laptop Stickers",
+    "slug": "/shop/laptop-stickers",
+    "parentId": "49006adf-4b91-4e55-be93-735f75530a71"
+  },
+  {
+    "id": "f2af2d96-3cc7-4570-a8f7-122fe1041785",
+    "name": "Magnets",
+    "slug": "/shop/magnets",
+    "parentId": "49006adf-4b91-4e55-be93-735f75530a71"
+  },
+  {
+    "id": "30ea325a-5827-4e13-80c1-b722e0779277",
+    "name": "Phone Cases",
+    "slug": "/shop/phone-cases",
+    "parentId": null
+  },
+  {
+    "id": "77a07117-1ef7-4b25-bc49-b871405e7253",
+    "name": "iPhone Cases",
+    "slug": "/shop/iphone-cases",
+    "parentId": "30ea325a-5827-4e13-80c1-b722e0779277"
+  },
+  {
+    "id": "ea1f27df-b8b8-472c-8403-4aa20bb65375",
+    "name": "Samsung Galaxy",
+    "slug": "/shop/samsung-galaxy",
+    "parentId": "30ea325a-5827-4e13-80c1-b722e0779277"
+  },
+  {
+    "id": "30f30a50-6df3-4efc-af80-5fd1a090db3c",
+    "name": "Wall Art",
+    "slug": "/shop/wall-art",
+    "parentId": null
+  },
+  {
+    "id": "cea0a68b-16cd-4c3f-85df-83efd61761d4",
+    "name": "Art Board Prints",
+    "slug": "/shop/art-board-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "a7d7d050-60d7-4d52-9593-f20053ed4811",
+    "name": "Art Prints",
+    "slug": "/shop/art-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "f23957c1-f61b-4db7-89ef-cf644c04faca",
+    "name": "Canvas Prints",
+    "slug": "/shop/canvas-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "a52106d8-4b99-49d1-8cf1-f392491a2851",
+    "name": "Framed Prints",
+    "slug": "/shop/framed-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "ec6b9081-8599-415f-9b6a-cdf9b259eba0",
+    "name": "Metal Prints",
+    "slug": "/shop/metal-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "e788d4fe-fcce-4ba5-9a0b-cc04b3081f8d",
+    "name": "Mounted Prints",
+    "slug": "/shop/mounted-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "872066c2-6f8e-4716-b3cf-b51a14a67015",
+    "name": "Photographic Prints",
+    "slug": "/shop/photographic-prints",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "cb8eb0a7-1bb9-4a1a-b5c0-2e67c82b1bb9",
+    "name": "Posters",
+    "slug": "/shop/posters",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "1725a6d7-7d40-4e84-8158-7a3840b6528f",
+    "name": "Tapestries",
+    "slug": "/shop/tapestries",
+    "parentId": "30f30a50-6df3-4efc-af80-5fd1a090db3c"
+  },
+  {
+    "id": "91c426df-3042-4c1f-85fd-ef6b92d11d16",
+    "name": "Home & Living",
+    "slug": "/shop/home-&-living",
+    "parentId": null
+  },
+  {
+    "id": "8536750c-49da-4ae9-90c7-e88971d66abe",
+    "name": "Acrylic Blocks",
+    "slug": "/shop/acrylic-blocks",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "985e4736-6d03-46b6-abcc-0b0864488c12",
+    "name": "Aprons",
+    "slug": "/shop/aprons",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "7a6dff69-8d7f-4db9-8828-ae6ac74a89c9",
+    "name": "Bath Mats",
+    "slug": "/shop/bath-mats",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "911a3e5c-7d58-491c-a1d2-d277d0bf3a98",
+    "name": "Clocks",
+    "slug": "/shop/clocks",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "cb1b9b73-2b6f-4e12-a78c-3fd9a8bdf218",
+    "name": "Coasters",
+    "slug": "/shop/coasters",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "723258bd-3648-41ad-b36c-f4051f143614",
+    "name": "Comforters",
+    "slug": "/shop/comforters",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "53dd5ead-74ea-4695-abf7-3bb9c259d71c",
+    "name": "Duvet Covers",
+    "slug": "/shop/duvet-covers",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "49d919c0-8a5c-4b9e-92ee-e74adfd53b81",
+    "name": "Jigsaw Puzzles",
+    "slug": "/shop/jigsaw-puzzles",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "0c1e9335-f519-4dc8-bbda-c3d214abd994",
+    "name": "Mugs",
+    "slug": "/shop/mugs",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "7afdb673-6514-42f9-8c91-1618fe9c0e02",
+    "name": "Shower Curtains",
+    "slug": "/shop/shower-curtains",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "147c1436-d997-44ba-be18-845bcd3aee5d",
+    "name": "Throw Blankets",
+    "slug": "/shop/throw-blankets",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "b46babdd-8caa-45f3-a7f6-0b1e8f23a8af",
+    "name": "Throw Pillows",
+    "slug": "/shop/throw-pillows",
+    "parentId": "91c426df-3042-4c1f-85fd-ef6b92d11d16"
+  },
+  {
+    "id": "2280f8cc-26b8-4f3b-96e3-a68807172c9f",
+    "name": "Kids & Babies",
+    "slug": "/shop/kids-&-babies",
+    "parentId": null
+  },
+  {
+    "id": "e4f3480c-9d74-42a3-8959-6ba8796e10de",
+    "name": "Baby One-Pieces",
+    "slug": "/shop/baby-one-pieces",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "7fb3be40-06ec-4aca-acfa-35890186e840",
+    "name": "Baby T-Shirts",
+    "slug": "/shop/baby-t-shirts",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "1cd1f29d-7865-4052-92fa-8ed299222cce",
+    "name": "Kids Masks",
+    "slug": "/shop/kids-masks",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "098e0716-a467-46f7-b30a-7b1ebe8425db",
+    "name": "Kids Pullover Hoodies",
+    "slug": "/shop/kids-pullover-hoodies",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "e460b8ac-d3fe-49a0-ab02-824dd5b9518a",
+    "name": "Kids T-Shirts",
+    "slug": "/shop/kids-t-shirts",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "426b6724-d689-4121-a73e-4b8969776a51",
+    "name": "Toddler Pullover Hoodies ",
+    "slug": "/shop/toddler-pullover-hoodies",
+    "parentId": "2280f8cc-26b8-4f3b-96e3-a68807172c9f"
+  },
+  {
+    "id": "b6293c15-8ad9-46a2-80a6-bbdd3076e312",
+    "name": "PetsNew",
+    "slug": "/shop/petsnew",
+    "parentId": null
+  },
+  {
+    "id": "1c0db82a-3a26-476a-b7be-035832028dc2",
+    "name": "Pet Bandanas",
+    "slug": "/shop/pet-bandanas",
+    "parentId": "b6293c15-8ad9-46a2-80a6-bbdd3076e312"
+  },
+  {
+    "id": "7dcfd136-5261-434f-afd1-e58ef1df78e8",
+    "name": "Pet Blankets",
+    "slug": "/shop/pet-blankets",
+    "parentId": "b6293c15-8ad9-46a2-80a6-bbdd3076e312"
+  },
+  {
+    "id": "267e33d7-0039-447f-a464-12dc2d192f58",
+    "name": "Pet BowlsNew",
+    "slug": "/shop/pet-bowlsnew",
+    "parentId": "b6293c15-8ad9-46a2-80a6-bbdd3076e312"
+  },
+  {
+    "id": "ebd45ed8-0bee-461f-bf1b-b75b38b7ba71",
+    "name": "Pet Mats",
+    "slug": "/shop/pet-mats",
+    "parentId": "b6293c15-8ad9-46a2-80a6-bbdd3076e312"
+  },
+  {
+    "id": "597503ce-6659-4713-b57a-46a7a7853cb6",
+    "name": "Accessories",
+    "slug": "/shop/accessories",
+    "parentId": null
+  },
+  {
+    "id": "3564caa8-cf08-4d3d-8830-53d4dd6b5387",
+    "name": "Backpacks",
+    "slug": "/shop/backpacks",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "0ad135ca-9ca3-4eab-bb57-3f575bcc899c",
+    "name": "Drawstring Bags",
+    "slug": "/shop/drawstring-bags",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "5930f532-e80d-4e2a-a652-8d32691e6d3c",
+    "name": "Duffle Bags",
+    "slug": "/shop/duffle-bags",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "fa8c4d84-f3bb-43a6-8ec2-ae6c46aa23a6",
+    "name": "Makeup Bags",
+    "slug": "/shop/makeup-bags",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "77ba7722-7855-4adc-9766-d5ae196ba47e",
+    "name": "Masks",
+    "slug": "/shop/masks",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "605dac15-2bc8-4eb2-b437-523d105af771",
+    "name": "Pins",
+    "slug": "/shop/pins",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "d40ccae7-d4a6-4656-ab00-b4ee174bd916",
+    "name": "Scarves",
+    "slug": "/shop/scarves",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+
+  {
+    "id": "29295cb7-e735-4e43-b7c6-ff41a3eb9417",
+    "name": "Tech Accessories",
+    "slug": "/shop/tech-accessories",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "cb185c39-bd98-4f9d-b651-3a62e76b6f58",
+    "name": "Toiletry Bags",
+    "slug": "/shop/toiletry-bags",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "582ea4fb-e2be-4c09-839b-5803b629e020",
+    "name": "Tote Bags",
+    "slug": "/shop/tote-bags",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "dc7f3a38-845e-4846-a597-e53ac8062878",
+    "name": "Travel Mugs",
+    "slug": "/shop/travel-mugs",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "933d92ad-f730-4b9b-bb9a-cf89a6ed0698",
+    "name": "Water Bottles",
+    "slug": "/shop/water-bottles",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "69a87a67-ae68-47b7-9857-cff6a8ad7826",
+    "name": "Zipper Pouches",
+    "slug": "/shop/zipper-pouches",
+    "parentId": "597503ce-6659-4713-b57a-46a7a7853cb6"
+  },
+  {
+    "id": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762",
+    "name": "Stationery & Office",
+    "slug": "/shop/stationery-&-office",
+    "parentId": null
+  },
+  {
+    "id": "49720c89-77ca-44b8-9890-a8c344760ca9",
+    "name": "Greeting Cards",
+    "slug": "/shop/greeting-cards",
+    "parentId": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762"
+  },
+  {
+    "id": "fdcfddc4-778f-422f-ba23-88d90154cbcc",
+    "name": "Hardcover Journals",
+    "slug": "/shop/hardcover-journals",
+    "parentId": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762"
+  },
+  {
+    "id": "88910bcd-e299-435e-9946-cc337bb48350",
+    "name": "Mouse Pads & Desk Mats",
+    "slug": "/shop/mouse-pads-&-desk-mats",
+    "parentId": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762"
+  },
+  {
+    "id": "bfa418e6-2ddd-4f4a-b0dc-a6384068312d",
+    "name": "Postcards",
+    "slug": "/shop/postcards",
+    "parentId": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762"
+  },
+  {
+    "id": "d38a42ee-fcc9-413e-ab36-d735468a9b68",
+    "name": "Spiral Notebooks",
+    "slug": "/shop/spiral-notebooks",
+    "parentId": "ead3ad62-cf2b-4baf-a0dc-ed6a933c6762"
+  },
+  {
+    "id": "217120a7-76cc-4fb9-9e12-9cde4686d5eb",
+    "name": "Gifts",
+    "slug": "/shop/gifts",
+    "parentId": null
+  },
+  {
+    "id": "b00aa45f-44de-4de5-9955-597ea65e270f",
+    "name": "Gift Certificates",
+    "slug": "/shop/gift-certificates",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "65b2064b-6a6e-4534-9c23-ba99ae0f6dfa",
+    "name": "Gifts for Friends",
+    "slug": "/shop/gifts-for-friends",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "39a3312d-3151-432c-9e8a-b845f35597e5",
+    "name": "Gifts for Her",
+    "slug": "/shop/gifts-for-her",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "6bab00dd-37b6-43a1-b2ce-e0b0098f7482",
+    "name": "Gifts for Him",
+    "slug": "/shop/gifts-for-him",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "bb2b022b-f301-4e3a-821a-1733c1bcc59b",
+    "name": "Gifts for PetsNew",
+    "slug": "/shop/gifts-for-petsnew",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "e55c6426-9768-4b6e-9997-be3547a30d83",
+    "name": "Gifts for Teens",
+    "slug": "/shop/gifts-for-teens",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "143e9386-cfbd-4406-98b5-7cb80e99d4e6",
+    "name": "Gifts for Them",
+    "slug": "/shop/gifts-for-them",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "aca59ecd-a463-48d3-971f-5e6e5c1d426e",
+    "name": "Gifts on a Budget",
+    "slug": "/shop/gifts-on-a-budget",
+    "parentId": "217120a7-76cc-4fb9-9e12-9cde4686d5eb"
+  },
+  {
+    "id": "fe238cb8-e4d8-489f-8b4a-bdb21b664303",
+    "name": "Explore designs",
+    "slug": "/shop/explore-designs",
+    "parentId": null
+  },
+  {
+    "id": "374a6ea8-deca-4910-93d0-f678e22cb8ee",
+    "name": "Aesthetics",
+    "slug": "/shop/aesthetics",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  },
+  {
+    "id": "a489b321-4551-4a06-9754-09007e7568d0",
+    "name": "Animals & Nature",
+    "slug": "/shop/animals-&-nature",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  },
+  {
+    "id": "fbebbc1f-f3a4-440e-9749-ce3d97ae44be",
+    "name": "For You",
+    "slug": "/shop/for-you",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  },
+  {
+    "id": "91d8998e-5939-4120-9ce6-a392449b49d7",
+    "name": "Netflix Fan Art",
+    "slug": "/shop/netflix-fan-art",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  },
+  {
+    "id": "456a7450-e6a9-478e-b253-7d65300f20f8",
+    "name": "Official Fan Art",
+    "slug": "/shop/official-fan-art",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  },
+  {
+    "id": "59bcfec0-0576-4a8a-befe-0da8b8252856",
+    "name": "Pop Culture",
+    "slug": "/shop/pop-culture",
+    "parentId": "fe238cb8-e4d8-489f-8b4a-bdb21b664303"
+  }
+]

@@ -5,10 +5,18 @@ import {
   type DefaultSession,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider, { type GoogleProfile } from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
+import { type User } from "~/types/users";
+import cuid from "cuid";
+
+enum ROLE {
+  ADMIN = "ADMIN",
+  USER = "USER",
+  SELLER = "SELLER",
+}
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -20,13 +28,25 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      name: string;
+      email: string;
       role: string;
+      profile: string;
+      emailVerified: boolean;
+      createdAt: string;
+      updatedAt: string;
     } & DefaultSession["user"];
   }
 
   interface User {
     id: string;
+    name: string;
+    email: string;
     role: string;
+    profile: string;
+    emailVerified: boolean;
+    createdAt: string;
+    updatedAt: string;
   }
 }
 
@@ -40,14 +60,20 @@ export const authOptions: NextAuthOptions = {
     session({ session, user }) {
       if (session.user) {
         session.user.id = user.id;
+        session.user.name = user.name;
+        session.user.email = user.email;
         session.user.role = user.role;
+        session.user.profile = user.profile;
+        session.user.emailVerified = user.emailVerified ? true : false;
+        session.user.createdAt = user.createdAt;
+        session.user.updatedAt = user.updatedAt;
       }
       return session;
     },
   },
   adapter: PrismaAdapter(prisma),
   pages: {
-    signIn: "/auth/signIn",
+    signIn: "/signup",
   },
   providers: [
     DiscordProvider({
@@ -57,6 +83,29 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        url: "https://accounts.google.com/o/oauth2/v2/auth",
+        params: {
+          state: "56asf86fas61wer648a56as64",
+        },
+      },
+      // resolve checks.state argument is missing.
+      checks: "state",
+
+      profile(p: GoogleProfile): Promise<User> {
+        console.log("Profile: ", p);
+        const user: User = {
+          id: cuid(),
+          name: p.name,
+          email: p.email,
+          role: ROLE.USER,
+          profile: p.picture,
+          emailVerified: false,
+          created_at: new Date(),
+          updated_at: new Date(),
+        };
+        return Promise.resolve(user);
+      },
     }),
     /**
      * ...add more providers here.
