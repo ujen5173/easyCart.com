@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { Footer } from "~/components";
 
 export default function Document() {
   return (
@@ -34,6 +35,7 @@ export default function Document() {
         }}
       >
         <Main />
+        <Footer />
         <NextScript />
       </body>
     </Html>

@@ -83,3 +83,8 @@ export type CustomizationCardProps = {
   index: number;
   item: string;
 };
+
+export type SelectProps = {
+  title: string;
+  option: string[];
+};

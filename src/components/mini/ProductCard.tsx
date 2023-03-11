@@ -14,17 +14,20 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
         <i className="uil uil-heart"></i>
       </button>
       <div>
-        <Image
-          width={300}
-          height={300}
-          src={
-            product.images[Math.floor(Math.random() * product.images.length)] ||
-            ""
-          }
-          draggable={false}
-          className="h-[calc(10vw)] max-h-[350px] min-h-[200px] w-full rounded-md object-cover"
-          alt={product.title}
-        />
+        <div className="h-[calc(10vw)] max-h-[350px] min-h-[200px] w-full rounded-md bg-light-blue">
+          <Image
+            width={300}
+            height={300}
+            src={
+              product.images[
+                Math.floor(Math.random() * product.images.length)
+              ] || ""
+            }
+            draggable={false}
+            className="h-full w-full object-cover"
+            alt={product.title}
+          />
+        </div>
 
         <div className="py-4">
           <h1 className="mb-1 block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium leading-5">

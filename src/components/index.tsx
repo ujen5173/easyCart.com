@@ -4,6 +4,7 @@ export { default as Input } from "./Input";
 export { default as FilterArea } from "./FilterArea";
 export { default as ProductGrid } from "./ProductGrid";
 export { default as SingleProductComponent } from "./SingleProductPage";
+export { default as Footer } from "./Footer";
 
 export { default as Header } from "./Header";
 export { default as HeaderMenu } from "./Header/HeaderMenu";

@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import { useState, type FC } from "react";
 import type { SingleProductComponentProps } from "~/types/pagesProps";
 import ProductContent from "./ProductContent";
 import ImageSection from "./ImageSection";
+import TagsSection from "../mini/TagsSection";
 
 const SingleProductComponent: FC<SingleProductComponentProps> = ({
   product,
@@ -19,6 +19,7 @@ const SingleProductComponent: FC<SingleProductComponentProps> = ({
           setQuantity={setQuantity}
         />
       </div>
+      <TagsSection product={product} />
     </section>
   );
 };

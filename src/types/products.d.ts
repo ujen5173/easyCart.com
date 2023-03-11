@@ -32,8 +32,8 @@ export type Product = {
     keywords: string;
   };
   customization?: {
-    color: string[];
-    size: string[];
+    [key: string]: string[];
+    [key: string]: string[];
   };
   warranty?: {
     type: string;

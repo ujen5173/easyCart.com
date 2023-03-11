@@ -4,7 +4,7 @@ import { type FC } from "react";
 
 const ImageSection: FC<ImageSectionProps> = ({ product }) => {
   return (
-    <div className="flex w-1/2 flex-col overflow-hidden rounded-md bg-white">
+    <div className="flex w-4/6 flex-col overflow-hidden rounded-md bg-white">
       <Image
         width={1960}
         height={840}
