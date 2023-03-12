@@ -1,13 +1,31 @@
 import Link from "next/link";
-import React, { useState, type FC } from "react";
+import React, { useContext, type FC } from "react";
+import { Context } from "~/context";
+import { ActionType } from "~/types/context.d";
 import type { ProductContentProps } from "~/types/pagesProps";
-import Select from "../mini/Select";
+import { Select } from "../mini";
 
 const ProductContent: FC<ProductContentProps> = ({
   product,
   quantity,
   setQuantity,
 }) => {
+  const { dispatch, dispatchToast } = useContext(Context);
+  const handleCart = (action: ActionType) => {
+    const cartData = {
+      id: product.id,
+      qty: quantity,
+      price: +product.price.new,
+    };
+    dispatch({ type: action, payload: cartData });
+    setQuantity(1);
+    dispatchToast({
+      message: "Product added to cart",
+      type: "success",
+      show: true,
+    });
+  };
+
   return (
     <div className="w-1/2 overflow-hidden rounded-md bg-white">
       <div className="border-b border-light-blue p-6">
@@ -61,7 +79,12 @@ const ProductContent: FC<ProductContentProps> = ({
           <div className="mb-4">
             {Object.keys(product.customization).map((key, index) => (
               <Select
-                option={Object.values(product.customization[key])}
+                option={
+                  (product.customization &&
+                    product.customization.hasOwnProperty(key) &&
+                    product.customization[key]) ||
+                  []
+                }
                 title={key}
                 key={index}
               />
@@ -93,9 +116,12 @@ const ProductContent: FC<ProductContentProps> = ({
                 }
                 max={+product.stock}
                 min={1}
-                className="w-16 rounded-md border-[3px] border-light-blue px-4 py-3 outline-none hover:border-lavender focus:border-lavender"
+                className="w-20 rounded-md border-[3px] border-light-blue px-4 py-3 outline-none hover:border-lavender focus:border-lavender"
               />
-              <button className="btn-primary rounded-md py-3">
+              <button
+                className="btn-primary rounded-md py-3"
+                onClick={() => handleCart(ActionType.ADD_TO_CART)}
+              >
                 Add to Cart
               </button>
               <button className="btn-primary-white rounded-md border-light-blue py-3">

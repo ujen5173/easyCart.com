@@ -2,7 +2,7 @@ import { useState, type FC } from "react";
 import type { SingleProductComponentProps } from "~/types/pagesProps";
 import ProductContent from "./ProductContent";
 import ImageSection from "./ImageSection";
-import TagsSection from "../mini/TagsSection";
+import {TagsSection} from "../mini";
 
 const SingleProductComponent: FC<SingleProductComponentProps> = ({
   product,

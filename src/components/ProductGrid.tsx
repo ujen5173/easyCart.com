@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import type { ProductGridProps } from "~/types/pagesProps";
 import { capitaize } from "~/utils/helpers";
-import ProductArea from "./mini/ProductArea";
+import { ProductArea } from "./mini";
 
 const ProductGrid: FC<ProductGridProps> = ({
   responseData,
